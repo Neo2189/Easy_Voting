@@ -10,6 +10,12 @@ This FiveM script allows you to conduct an election within your server. Players 
 - **Multilingual Support**: The script supports multiple languages such as English and German.
 - **Debug Mode**: There is an optional debug mode that outputs detailed information to the console.
 
+## Requirements
+- ESX
+- ox_lib
+- mysql-async or oxmysql
+
+
 ## Installation
 
 1. **Set up MySQL Database**:
@@ -102,5 +108,4 @@ This script is licensed under the MIT License. See [LICENSE](LICENSE) for more d
 
 ## Contact
 
-- Developer: [Your Name or GitHub Profile]
-- GitHub: [Your GitHub Link]
+- Discord: [[Easy_Scripts](https://discord.gg/hnuf3hTyse)]
