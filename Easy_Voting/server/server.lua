@@ -1,6 +1,5 @@
 ESX = exports["es_extended"]:getSharedObject()
 
--- Konvertiert einen Datumsstring "TT.MM.JJJJ" in einen UNIX-Timestamp
 function ConvertDateToTimestamp(dateString)
     local day, month, year = dateString:match("(%d+)%.(%d+)%.(%d+)")
     return os.time({year = tonumber(year), month = tonumber(month), day = tonumber(day), hour = 0, min = 0, sec = 0})
@@ -9,12 +8,10 @@ end
 local voteStartTimestamp = ConvertDateToTimestamp(Config.VoteStartDate)
 local resultsTimestamp   = ConvertDateToTimestamp(Config.ResultsDate)
 
--- Prüfe den Wahlstatus und gebe via Callback zurück
 ESX.RegisterServerCallback('wahl:checkVoteStatus', function(source, cb)
     local currentTime = os.time()
     local language = Config.Language or "de"
     
-    -- Überprüfe, ob die Zeitstempel korrekt gesetzt sind
     if not voteStartTimestamp or not resultsTimestamp then
         cb(false, "Fehler: Ungültige Wahl-Daten!")
         return
@@ -103,7 +100,6 @@ AddEventHandler("wahl:checkResultsAvailability", function()
             TriggerClientEvent("wahl:showResults", _source, {results = results})
         end)
     else
-        -- Ergebnisse sind noch nicht freigegeben; sende stattdessen das Release-Datum
         TriggerClientEvent("wahl:showResults", _source, {results = {}, releaseDate = Config.ResultsDate})
     end
 end)
