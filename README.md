@@ -42,13 +42,33 @@ This FiveM script allows you to conduct an election within your server. Players 
         Debug = true,                  -- Enable debug mode (optional)
         Language = "en",               -- Language: "de" for German, "en" for English
     }
+
+    Config = {}
+
+    Config.Parties = {  -- List of parties players can vote for
+        {name = "ParteiA", description = "Description A"},
+        {name = "ParteiB", description = "Description B"},
+        {name = "ParteiC", description = "Description C"}
+    }
+
+    Config.VoteLocations = {
+        vector3(-545.4446, -203.8230, 38.2152)
+    }
+
+    Config.Language = "en"  -- Language: "de" for German, "en" for English
+
+    -- Date in Format TT.MM.JJJJ
+    Config.VoteStartDate = "18.02.2025"    -- Start date of the election
+    Config.ResultsDate   = "20.02.2025"    -- Date when results will be released
+
+    Config.Debug = false -- -- Enable debug mode (optional)
     ```
 
 4. **Start the Script**:
     - Add the script to your `server.cfg`:
 
     ```bash
-    ensure Easy_Voting
+    start Easy_Voting
     ```
 
 ## Usage
