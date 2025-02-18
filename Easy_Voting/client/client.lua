@@ -6,7 +6,7 @@ local nuiVisible = false
 local language = Config.Language or "de"
 local L = Locales[language]
 
-RegisterCommand("wahl", function()
+RegisterCommand("vote", function()
     ESX.TriggerServerCallback('wahl:checkVoteStatus', function(voteOpen, message)
         if not voteOpen then
              lib.alertDialog({
