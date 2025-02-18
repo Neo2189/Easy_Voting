@@ -108,4 +108,4 @@ This script is licensed under the MIT License. See [LICENSE](LICENSE) for more d
 
 ## Contact
 
-- Discord: [[Easy_Scripts](https://discord.gg/hnuf3hTyse)]
+- Discord: [[Easy-Scripts](https://discord.gg/hnuf3hTyse)]
