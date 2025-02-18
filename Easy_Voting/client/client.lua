@@ -3,7 +3,6 @@ ESX = exports["es_extended"]:getSharedObject()
 local hasVoted = false
 local nuiVisible = false
 
--- Stelle sicher, dass die Locale-Tabelle aus locale.lua geladen wurde
 local language = Config.Language or "de"
 local L = Locales[language]
 
@@ -51,7 +50,6 @@ RegisterCommand("wahl", function()
     end)
 end)
 
--- Anzeige der Wahlergebnisse (UI)
 CreateThread(function()
     while true do
         Wait(0)
@@ -59,7 +57,7 @@ CreateThread(function()
         for _, location in ipairs(Config.VoteLocations) do
             if #(playerCoords - location) < 5.0 then
                 DrawMarker(1, location.x, location.y, location.z, 0, 0, 0, 0, 0, 0, 1.0, 1.0, 1.0, 255, 255, 0, 150, false, false, 2, false, nil, nil, false)
-                if IsControlJustReleased(0, 38) then -- E drücken
+                if IsControlJustReleased(0, 38) then 
                     TriggerServerEvent("wahl:checkResultsAvailability")
                 end
             end
