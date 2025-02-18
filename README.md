@@ -32,17 +32,6 @@ This FiveM script allows you to conduct an election within your server. Players 
     - Open the `config.lua` file and configure the election parameters:
 
     ```lua
-    Config = {
-        VoteStartDate = "20.02.2025",  -- Start date of the election
-        ResultsDate = "22.02.2025",    -- Date when results will be released
-        Parties = {                    -- List of parties players can vote for
-            {name = "Party A", label = "Party A"},
-            {name = "Party B", label = "Party B"},
-        },
-        Debug = true,                  -- Enable debug mode (optional)
-        Language = "en",               -- Language: "de" for German, "en" for English
-    }
-
     Config = {}
 
     Config.Parties = {  -- List of parties players can vote for
